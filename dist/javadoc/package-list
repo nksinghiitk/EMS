@@ -1,0 +1,14 @@
+PrintAction
+chat
+com.myapp.struts
+com.myapp.struts.AdminDAO
+com.myapp.struts.Candidate
+com.myapp.struts.Voter
+com.myapp.struts.Voting
+com.myapp.struts.admin
+com.myapp.struts.ajax
+com.myapp.struts.chat
+com.myapp.struts.election_manager
+com.myapp.struts.hbm
+com.myapp.struts.institute_admin
+com.myapp.struts.utility

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 10, 2011 10:00:02 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class lazy="true" name="com.myapp.struts.hbm.StaffDetail" table="staff_detail">
+    <composite-id class="com.myapp.struts.hbm.StaffDetailId" name="id">
+      <key-property name="staffId" type="string">
+        <column length="100" name="staff_id"/>
+      </key-property>
+      <key-property name="instituteId" type="string">
+        <column length="20" name="institute_id"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.myapp.struts.hbm.Institute" fetch="select" insert="false" name="institute" update="false">
+      <column length="20" name="institute_id" not-null="true" unique="true"/>
+    </many-to-one>
+    <property name="title" type="string">
+      <column length="5" name="title"/>
+    </property>
+    <property name="firstName" type="string">
+      <column length="20" name="first_name"/>
+    </property>
+    <property name="lastName" type="string">
+      <column length="20" name="last_name"/>
+    </property>
+    <property name="contactNo" type="string">
+      <column length="20" name="contact_no"/>
+    </property>
+    <property name="mobileNo" type="string">
+      <column length="20" name="mobile_no"/>
+    </property>
+    <property name="emailId" type="string">
+      <column length="100" name="email_id"/>
+    </property>
+    <property name="dateJoining" type="date">
+      <column length="10" name="date_joining"/>
+    </property>
+    <property name="dateReleaving" type="date">
+      <column length="10" name="date_releaving"/>
+    </property>
+    <property name="fatherName" type="string">
+      <column length="30" name="father_name"/>
+    </property>
+    <property name="dateOfBirth" type="date">
+      <column length="10" name="date_of_birth"/>
+    </property>
+    <property name="gender" type="string">
+      <column length="8" name="gender"/>
+    </property>
+    <property name="address1" type="string">
+      <column length="50" name="address1"/>
+    </property>
+    <property name="city1" type="string">
+      <column length="20" name="city1"/>
+    </property>
+    <property name="state1" type="string">
+      <column length="20" name="state1"/>
+    </property>
+    <property name="country1" type="string">
+      <column length="20" name="country1"/>
+    </property>
+    <property name="zip1" type="string">
+      <column length="20" name="zip1"/>
+    </property>
+    <property name="address2" type="string">
+      <column length="50" name="address2"/>
+    </property>
+    <property name="city2" type="string">
+      <column length="20" name="city2"/>
+    </property>
+    <property name="state2" type="string">
+      <column length="20" name="state2"/>
+    </property>
+    <property name="country2" type="string">
+      <column length="20" name="country2"/>
+    </property>
+    <property name="zip2" type="string">
+      <column length="20" name="zip2"/>
+    </property>
+     <property name="enrollment" type="string">
+      <column length="20" name="enrollment"/>
+    </property>
+    <set inverse="true" name="logins">
+      <key>
+        <column length="100" name="staff_id"/>
+        <column length="20" name="institute_id"/>
+      </key>
+      <one-to-many class="com.myapp.struts.hbm.Login"/>
+    </set>
+  </class>
+</hibernate-mapping>
